@@ -1,3 +1,14 @@
+import {z} from "zod";
+import {newMessageSchema} from "./utils";
+
+// enum
+export enum Category {
+  Compliment = "compliment",
+  Criticism = "criticism",
+  Confession = "confession",
+  Random = "random",
+}
+
 // interface to name an object type
 export interface MessageEntry {
   id: number;
@@ -7,12 +18,4 @@ export interface MessageEntry {
   category: Category;
 }
 
-export type NewMessageEntry = Omit<MessageEntry, "id">;
-
-// enum
-export enum Category {
-  Compliment = "compliment",
-  Criticism = "criticism",
-  Confession = "confession",
-  Random = "random",
-}
+export type NewMessageEntry = z.infer<typeof newMessageSchema>;
