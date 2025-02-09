@@ -1,0 +1,6 @@
+POST http://localhost:3000/api/messages
+Content-Type: application/json
+
+{
+"date": "2017-04-15", "recipient": "Nono", "content": "Nice to meet you", "category": "random"
+}
